@@ -1,1 +1,21 @@
-123123123123123123 JULIANA
+aufhshf83r3432432423423423fdfsdfsd
+#!/bin/bash
+function getStat(){
+  declare -a ARRAY
+  count=0;
+  for file in *.cpp
+  do
+    ARRAY[$count]=$file;
+    ((count++));
+  done
+  for((i=0;i<${#ARRAY[@]};i++)){
+    printf "%s -- " "${ARRAY[$i]}";
+    stat -c %Z ${ARRAY[$i]};
+  }
+}
+while :
+do
+  getStat;
+  sleep 2;
+  clear
+done
