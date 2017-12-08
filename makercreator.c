@@ -2,23 +2,22 @@
 #include <stdlib.h>
 
 void generateMaker(){
-  char sentence[1000];
-   FILE *fptr;
+  FILE *fptr;
+  char name[100];
 
-   fptr = fopen("program.txt", "w");
-   if(fptr == NULL)
-   {
-      printf("Error!");
-      exit(1);
-   }
-   
-   printf("Enter a sentence:\n");
-  gets(sentence);
+  fptr = fopen("program.txt", "w");
+  if(fptr == NULL) {
+    printf("Error!");
+    exit(1);
+  }
 
-   fprintf(fptr,"%s", sentence);
-   fclose(fptr);
+  printf("Enter a sentence:\n");
+   fgets(name,100,stdin);
+
+ fprintf(fptr,"%s", name);
+  fclose(fptr);
 }
 
 int main(){
-generateMaker();
-  }
+  generateMaker();
+}
